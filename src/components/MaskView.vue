@@ -13,7 +13,6 @@
                 <img src="../assets/IMG_20170323_130222(1).jpg"/>
                 <img src="../assets/IMG_20170323_093045(1).jpg"/>
                 <img src="../assets/IMG2_20170228_151926.jpg"/>
-                <img src="../assets/2a761d_a4eca78ebcdb45dc9f0f48aac6777d39.jpg"/>
             </div>
         </div>
     </div>
@@ -43,7 +42,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         z-index: 1;
-        box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     .other-half{
@@ -73,6 +72,6 @@
     .showcase img {
         height: 100%;
         margin-right: 2vw;
-        box-shadow: -5px 5px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
 </style>

@@ -6,9 +6,11 @@
                     <h2>Logo Design</h2>
                     <p>The quick brown fox jumps over the lazy dog. The very quick brown fox jumps over the very lazy dog.</p>
                 </div>
-                <div id="swipe-view">
+                <div class="swipe-view">
                     <div class="swipecontainer">
-                        <img v-for="(image, index) in images" :src="image" :key="index"/>
+                        <div v-for="(image, index) in images" :key="index">
+                            <img :src="image"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,26 +38,6 @@
 </script>
 
 <style scoped>
-    #swipe-view{
-        overflow-y: scroll;
-    }
-    #swipe-view .swipecontainer {
-        display: flex;
-        padding: 30px;
-        width: 100vw;
-        overflow-y: scroll;
-        margin-bottom: 15vw;
-    }
-    #swipe-view .swipecontainer img {
-        display: inline-block;
-        height: 60vw;
-        max-height: 50vh;
-        margin-right: 30px;
-        box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
-    }
-    #swipe-view .swipecontainer img:last-of-type{
-        margin-right: 0px;
-    }
     .title{
         color: #cccccc;
         padding: 5vw 30px;

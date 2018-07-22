@@ -1,9 +1,9 @@
 <template>
   <div id="app">
       <div class="full-screen-view" @click="fullScreenView=null" :class="{'active':fullScreenView}">
-          <img :src="fullScreenView"/>
+          <img :src="fullScreenImage"/>
       </div>
-      <div class="stage">
+      <div class="stage" :class="{'blur':fullScreenView}">
           <div class="position-relative">
               <div class="tilt background"></div>
           </div>
@@ -16,7 +16,7 @@
                   </div>
 
                   <div class="ItemCard" v-for="(image, imageIndex) in row"
-                       :key="imageIndex" @click="fullScreenView=image.image">
+                       :key="imageIndex" @click="fullScreenImage = image.image; fullScreenView=image.image">
                       <image-component
                               :text="image.text"
                               :color="image.color"
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import TitleComponent from './TileViewComponents/Title.vue'
-import ImageComponent from './TileViewComponents/Image.vue'
+import TitleComponent from './Atoms/Title.vue'
+import ImageComponent from './Atoms/Image.vue'
 
 export default {
   name: 'app',
@@ -40,42 +40,53 @@ export default {
     TitleComponent,
     ImageComponent
   },
+    watch:{
+      fullScreenView(isFullScreen){
+          if(isFullScreen){
+              this.$emit('toggleScrolling', false)
+          }
+          else {
+              this.$emit('toggleScrolling', true)
+          }
+      }
+    },
   data(){
       return {
+          fullScreenImage: null,
           fullScreenView: null,
           rows: [
               [
                   {
-                      image: require("../assets/Plant_square.png")
+                      image: require("../assets/Envelope-01.svg")
                   }
               ],
               [
                   {
-                      image: require("../assets/Ice_Cream_sqare.png")
+                      image: require("../assets/Ice_Cream.png")
                   },
                   {
-                      image: require("../assets/Comet.png")
+                      image: require("../assets/Comet.svg")
                   }
               ],
               [
                   {
-                      image: require("../assets/UX.png")
+                      image: require("../assets/UX.svg")
                   },
                   {
-                      image: require("../assets/Bumblebee_sq.png")
+                      image: require("../assets/Bumblebee.png")
                   },
                   {
-                      image: require("../assets/Pencil2.png")
+                      image: require("../assets/Pencil.svg")
                   },
               ],
 
               [
                   {
                       color: '#ff8ded',
-                      image: require("../assets/Logo.png")
+                      image: require("../assets/Triangles.svg")
                   },
                   {
-                      image: require("../assets/Peel.png")
+                      image: require("../assets/Peel.svg")
                   },
                   {
                       color: '#ff9463'
@@ -137,7 +148,7 @@ export default {
     }
     .full-screen-view.active{
         z-index: 999;
-        background-color: rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.5);
     }
     .full-screen-view {
         position: fixed;
@@ -151,12 +162,13 @@ export default {
     }
     .full-screen-view img{
         height: 0;
-        transition: height 200ms;
+        opacity: 0;
+        transition: all 200ms;
     }
     .full-screen-view.active img{
-        height:auto;
+        height:60%;
         max-height: 60%;
-        max-width: 100%;
+        opacity: 1;
         box-shadow: 10px 10px 50px 20px rgba(0,0,0,0.2);
     }
     .ItemCard{

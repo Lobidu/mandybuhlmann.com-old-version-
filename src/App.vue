@@ -1,9 +1,12 @@
 <template>
-    <main>
-        <tile-view/>
-        <swipe-view/>
-        <mask-view/>
-        <portfolio-view/>
+    <main :class="scrollClass">
+        <div class="background-green push-down">
+            <tile-view @toggleScrolling="toggleScrolling"/>
+            <swipe-view/>
+            <map-view/>
+            <grid-view/>
+            <portfolio-view/>
+        </div>
     </main>
 </template>
 
@@ -13,15 +16,32 @@
     import GridView from './components/GridView.vue'
     import MaskView from "./components/MaskView";
     import PortfolioView from "./components/PortfolioView";
+    import MapView from "./components/MapView";
 
     export default {
         name: "App",
         components:{
+            MapView,
             PortfolioView,
             MaskView,
             TileView,
             SwipeView,
             GridView
+        },
+        data(){
+          return {
+              scrollClass: 'scroll'
+          }
+        },
+        methods: {
+            toggleScrolling(shouldBodyScroll){
+                if(shouldBodyScroll){
+                    this.scrollClass = 'scroll'
+                }
+                else {
+                    this.scrollClass = 'no-scroll'
+                }
+            }
         }
     }
 </script>
@@ -33,7 +53,7 @@
     }
     body {
         margin:0;
-        background-color: #00807f;
+        background: #dddddd;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -44,6 +64,11 @@
         -moz-osx-font-smoothing: grayscale;
         color: #444444;
         overflow: hidden;
+    }
+    main.no-scroll {
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
     }
     h1, h2, h3, h4, h5, h6 {
         font-weight: normal;
@@ -86,5 +111,37 @@
             font-size: 1.5vw;
             max-width: 40vw;
         }
+    }
+    .push-down {
+        padding-bottom: 20vw;
+    }
+    .background-green {
+        background-color: #00807f;
+    }
+    .background-dark-grey {
+        background-color: #888888;
+    }
+    .swipe-view{
+        overflow-y: scroll;
+    }
+    .swipe-view .swipecontainer {
+        display: flex;
+        padding: 30px;
+        width: 100vw;
+        overflow-y: scroll;
+        margin-bottom: 15vw;
+    }
+    .swipe-view .swipecontainer>* {
+        margin-right: 30px;
+    }
+    .swipe-view .swipecontainer img{
+        display: inline-block;
+        height: 60vw;
+        max-height: 50vh;
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    }
+    .swipe-view .swipecontainer>*:last-of-type{
+        margin-right: 0px;
+        padding-right: 30px;
     }
 </style>
