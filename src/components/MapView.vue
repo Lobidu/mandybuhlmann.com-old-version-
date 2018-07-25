@@ -1,23 +1,28 @@
 <template>
-    <div>
-        <div id="map-view" :class="{'fullview':fullView}" @click="fullView = !fullView">
-            <div class="map position">
-                <div class="tilt">
-                    <div class="map-layer lower-layer">
-                        <div class="in-between-layer"></div>
+    <div id="map-view">
+        <div class="constraint" :class="{'fullview':fullView}"  @click="fullView = !fullView">
+            <div>
+                <div class="tilt-nomove">
+                    <div class="paper paper-left"></div>
+                    <div class="paper paper-right message">
                     </div>
-                    <div class="map-layer middle-layer">
-                        <div class="in-between-layer"></div>
+                    <div class="paper paper-right-top">
                     </div>
-                    <div class="map-layer upper-layer"></div>
                 </div>
             </div>
         </div>
-        <div class="constraint" :class="{'fullview':fullView}"  @click="fullView = !fullView">
-            <div>
-                <div class="next-background">
-                    <div class="arrow arrow-left"></div>
-                    <div class="arrow arrow-right"></div>
+        <div class="map-container" :class="{'fullview':fullView}" @click="fullView = !fullView">
+            <div class="actionable map-shadow">
+                <div class="map position">
+                    <div class="tilt">
+                        <div class="map-layer lower-layer">
+                            <div class="in-between-layer"></div>
+                        </div>
+                        <div class="map-layer middle-layer">
+                            <div class="in-between-layer"></div>
+                        </div>
+                        <div class="map-layer upper-layer"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,23 +42,32 @@
 
 <style scoped>
     #map-view {
-        width:100vw;
-        overflow: hidden;
-        height:45vw;
     }
-     #map-view img{
+    .map-container {
+        height:45vw;
+        overflow: visible;
+    }
+     .map-container img{
          width:100%;
      }
      .position {
          margin-left: 50vw;
          position: absolute;
+         overflow: visible;
          z-index: 9;
      }
      .tilt {
          transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg) translateY(0);
          transform-origin: bottom left;
+         overflow: visible;
+         position: relative;
      }
-    .map .map-layer, .map .in-between-layer {
+    .actionable {
+        position: relative;
+        transition: transform 200ms ease-in-out;
+    }
+    .actionable:hover {
+        transform: translateY(-0.8vw);
     }
     .map .in-between-layer {
         width: 12vw;
@@ -90,24 +104,36 @@
     .lower-layer {
         z-index: 1;
         background-position: 0 0;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+        box-shadow: 1vw 0.5vw 1.2vw rgba(0,0,0,0.2);
+    }
+    .actionable:hover .lower-layer {
+        box-shadow: 1vw 1.5vw 3vw rgba(0,0,0,0.2);
     }
     .middle-layer {
         z-index: 3;
         margin-left:8vw;
         margin-top:-3vw;
         background-position: 50% 0;
-        box-shadow: 0 11px 12px rgba(0,0,0,0.2);
+        box-shadow: 1vw 0.8vw 1.2vw rgba(0,0,0,0.2);
+    }
+    .actionable:hover .middle-layer {
+        box-shadow: 1vw 1.8vw 3vw rgba(0,0,0,0.2);
     }
     .upper-layer {
         z-index: 5;
         margin-left:16vw;
         margin-top:-6vw;
         background-position: 100% 0;
-        box-shadow: 0 15px 19px rgba(0,0,0,0.2);
+        box-shadow: 1vw 1.5vw 1.2vw rgba(0,0,0,0.2);
+    }
+    .actionable:hover .upper-layer {
+        box-shadow: 1vw 2.3vw 3vw rgba(0,0,0,0.2);
     }
     .position, .tilt, .map-layer, .in-between-layer{
-        transition: all 1s ;
+        transition: box-shadow 200ms ease-in-out, all 1s ease-in-out;
+    }
+    .fullview .actionable {
+        transform: none;
     }
     .fullview .position{
         margin-left:5vw;
@@ -133,40 +159,38 @@
         margin-left: 60vw;
     }
     .constraint{
-        width:100vw;
+        width: 100vw;
         overflow-x: hidden;
-        margin-top: -28vw;
-        margin-bottom: 13vw;
     }
-    .next-background {
+    .tilt-nomove {
+        margin-top: -14vw;
         position: absolute;
-        background: #dddddd;
         transform-origin: top left;
-        height: 130vh;
-        width: 200vw;
-        transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg) translateX(-60vw) translateY(-33vw);
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg);
     }
-    .arrow {
+    .paper {
         position: absolute;
+        background: #f7f2ed;
+        width: 44vw;
+        height: 57vw;
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    }
+    .message {
+        padding: 2vw;
+        font-size: 7vw;
+    }
+    .paper-right {
+        left: 105vw;
+        top: -2vw;
+        transform: rotate(10deg);
+    }
+    .paper-right-top {
         background: #ffffff;
-        width: 11vw;
-        height: 10vw;
-        top: -5vw;
-        transition: all 1000ms;
+        left: 105vw;
+        top: -11vw;
+        transform: rotate(-5deg);
     }
-    .arrow-right {
-        left: 62%;
-        clip-path: polygon(0% 0%,0% 100%,100% 50%);
+    .paper-left {
+        left: 44vw;
     }
-    .arrow-left {
-        left: 32%;
-        clip-path: polygon(100% 100%,100% 0%,0% 50%);
-    }
-    .fullview .arrow-left {
-       transform: translateX(-100vw);
-    }
-    .fullview .arrow-right {
-        transform: translateX(100vw);
-    }
-
 </style>

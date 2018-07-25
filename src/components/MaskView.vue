@@ -9,10 +9,10 @@
                 <p>A mad boxer shot a quick, gloved jab to the jaw of his dizzy opponent.</p>
             </div>
             <div class="showcase">
-                <img src="../assets/IMG_20170323_130213(1).jpg"/>
-                <img src="../assets/IMG_20170323_130222(1).jpg"/>
-                <img src="../assets/IMG_20170323_093045(1).jpg"/>
-                <img src="../assets/IMG2_20170228_151926.jpg"/>
+                <!--<img src="../assets/IMG_20170323_130213(1).jpg"/>-->
+                <!--<img src="../assets/IMG_20170323_130222(1).jpg"/>-->
+                <!--<img src="../assets/IMG_20170323_093045(1).jpg"/>-->
+                <!--<img src="../assets/IMG2_20170228_151926.jpg"/>-->
             </div>
         </div>
     </div>

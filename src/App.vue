@@ -2,11 +2,11 @@
     <main :class="scrollClass">
         <div class="background-green push-down">
             <tile-view @toggleScrolling="toggleScrolling"/>
-            <swipe-view/>
             <map-view/>
+            <swipe-view/>
+        </div>
             <grid-view/>
             <portfolio-view/>
-        </div>
     </main>
 </template>
 
@@ -54,6 +54,8 @@
     body {
         margin:0;
         background: #dddddd;
+        width:100vw;
+        overflow-x: hidden;
     }
     *, *:before, *:after {
         box-sizing: inherit;

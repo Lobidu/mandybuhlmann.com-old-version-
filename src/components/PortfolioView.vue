@@ -1,6 +1,5 @@
 <template>
     <div id="portfolio">
-        <div class="tilt"></div>
         <div class="content">
             <div class="title">
                 <h2>Fine Arts</h2>
@@ -102,13 +101,13 @@
     }
     .content {
         padding: 1px; /*Avoid collapsing margins*/
-        margin-top: 15vw;
+        /*margin-top: 15vw;*/
         background: #dddddd;
         z-index: 2;
         position: relative;
     }
     .content .title {
-        margin-top: -16vw;
+        /*margin-top: -16vw;*/
     }
      .title{
          padding: 1px; /*Avoid collapsing margins*/

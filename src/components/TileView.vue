@@ -11,14 +11,21 @@
               <div class="row" v-for="(row, rowIndex) in rows" :key="rowIndex"
               :style="'width:'+calculateWidth(rowIndex)+'vw; margin-left: '+ calculateMargin(rowIndex) +'vw;'"
               >
-                  <div class="ItemCard title-item" v-if="rowIndex==1">
+                  <div class="ItemCard title-item" v-if="rowIndex===0">
+                      <image-component
+                              :image="require('../assets/envelope_zu.png')"
+                              :shadow="true"
+                              :hover="false"
+                              class="tile object oversize"/>
+                  </div>
+
+                  <div class="ItemCard title-item" v-if="rowIndex===1">
                       <title-component class="tile object" text="MANDY<br/>BUHLMANN"/>
                   </div>
 
                   <div class="ItemCard" v-for="(image, imageIndex) in row"
                        :key="imageIndex" @click="fullScreenImage = image.image; fullScreenView=image.image">
                       <image-component
-                              :text="image.text"
                               :color="image.color"
                               :image="image.image"
                               :shadow="image.shadow"
@@ -33,10 +40,12 @@
 <script>
 import TitleComponent from './Atoms/Title.vue'
 import ImageComponent from './Atoms/Image.vue'
+import MapView from "./MapView";
 
 export default {
   name: 'app',
   components: {
+      MapView,
     TitleComponent,
     ImageComponent
   },
@@ -55,38 +64,33 @@ export default {
           fullScreenImage: null,
           fullScreenView: null,
           rows: [
-              [
-                  {
-                      image: require("../assets/Envelope-01.svg")
-                  }
-              ],
+              [],
               [
                   {
                       image: require("../assets/Ice_Cream.png")
                   },
                   {
-                      image: require("../assets/Comet.svg")
+                      image: require("../assets/Comet.png")
                   }
               ],
               [
                   {
-                      image: require("../assets/UX.svg")
+                      image: require("../assets/UX.png")
                   },
                   {
                       image: require("../assets/Bumblebee.png")
                   },
                   {
-                      image: require("../assets/Pencil.svg")
+                      image: require("../assets/Pencil.png")
                   },
               ],
-
               [
                   {
                       color: '#ff8ded',
-                      image: require("../assets/Triangles.svg")
+                      image: require("../assets/Triangles.png")
                   },
                   {
-                      image: require("../assets/Peel.svg")
+                      image: require("../assets/Peel.png")
                   },
                   {
                       color: '#ff9463'
@@ -107,7 +111,7 @@ export default {
         },
         calculateWidth(rowIndex){
             if (rowIndex<1){
-                return 80
+                return 100
             }
             else {
                 return 130
@@ -119,17 +123,16 @@ export default {
 
 <style>
     .stage {
-        padding-top: 10vw;
+        padding-top: 5vw;
         width: 100vw;
         margin-bottom: -60vw;
-        overflow: hidden;
     }
     .position-relative{
         position: relative;
     }
     .background {
-        width: 260vw;
-        height: 160vw;
+        width: 288vw;
+        height: 238vw;
         position: absolute;
         background: #dddddd;
         top: -25vw;
