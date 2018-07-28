@@ -1,31 +1,32 @@
 <template>
     <div id="grid-view">
+        <full-screen-view :image="fullScreenImage" :isActive="fullScreenView" @close="fullScreenView=false"></full-screen-view>
         <div class="tilt"></div>
         <div class="grid">
             <div class="first-row">
                 <div class="grid-item first grid-title title">
                     <h2>Interface<br/> Design</h2>
                 </div>
-                <div class="grid-item second">
+                <div class="grid-item second" @click="fullScreenView=true; fullScreenImage=images[0]">
                     <image-component
-                            :image="require('../assets/2.png')"
+                            :image="images[0]"
                             :shadow="true" />
                 </div>
             </div>
             <div class="second-row">
-                <div class="grid-item first">
+                <div class="grid-item first" @click="fullScreenView=true; fullScreenImage=images[1]">
                     <image-component
-                            :image="require('../assets/1.jpg')"
+                            :image="images[1]"
                             :shadow="true" />
                 </div>
-                <div class="grid-item second">
+                <div class="grid-item second" @click="fullScreenView=true; fullScreenImage=images[2]">
                     <image-component
-                            :image="require('../assets/3.jpg')"
+                            :image="images[2]"
                             :shadow="true" />
                 </div>
-                <div class="grid-item third">
+                <div class="grid-item third" @click="fullScreenView=true; fullScreenImage=images[3]">
                     <image-component
-                            :image="require('../assets/4.jpg')"
+                            :image="images[3]"
                             :shadow="true" />
                 </div>
             </div>
@@ -36,25 +37,39 @@
 
 <script>
     import ImageComponent from './Atoms/Image';
+    import FullScreenView from "./Atoms/FullScreenView";
     export default {
         name: "GridView",
         components: {
+            FullScreenView,
             ImageComponent
+        },
+        data() {
+            return {
+                fullScreenView: false,
+                fullScreenImage: null,
+                images: [
+                    require('../assets/2.png'),
+                    require('../assets/1.jpg'),
+                    require('../assets/3.jpg'),
+                    require('../assets/IMG_20170115_115308.jpg')
+                ]
+            }
         }
     }
 </script>
 
 <style>
     #grid-view {
-        background: #dddddd;
         margin-top: 0vw;
-        height: 55vw;
+        margin-bottom: 26vw;
+        height: 35vw;
         border: 1px solid #dddddd; /*avoid collapsing margins*/
     }
     #grid-view .tilt {
         background: #dddddd;
-        height: 130vh;
-        width: 200vw;
+        height: 127vw;
+        width: 271vw;
         -webkit-transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg) translateX(-60vw) translateY(-33vw);
         transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg) translateX(-60vw) translateY(0);
         -webkit-transform-origin: top left;

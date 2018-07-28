@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-      <div class="full-screen-view" @click="fullScreenView=null" :class="{'active':fullScreenView}">
-          <img :src="fullScreenImage"/>
-      </div>
-      <div class="stage" :class="{'blur':fullScreenView}">
+      <full-screen-view :image="fullScreenImage" :isActive="fullScreenView" @close="fullScreenView=false"></full-screen-view>
+      <div class="stage">
           <div class="position-relative">
               <div class="tilt background"></div>
           </div>
@@ -41,10 +39,12 @@
 import TitleComponent from './Atoms/Title.vue'
 import ImageComponent from './Atoms/Image.vue'
 import MapView from "./MapView";
+import FullScreenView from "./Atoms/FullScreenView";
 
 export default {
   name: 'app',
   components: {
+      FullScreenView,
       MapView,
     TitleComponent,
     ImageComponent
@@ -67,7 +67,7 @@ export default {
               [],
               [
                   {
-                      image: require("../assets/Ice_Cream.png")
+                      image: require("../assets/Ice_Cream.jpg")
                   },
                   {
                       image: require("../assets/Comet.png")
@@ -78,7 +78,7 @@ export default {
                       image: require("../assets/UX.png")
                   },
                   {
-                      image: require("../assets/Bumblebee.png")
+                      image: require("../assets/Bumblebee.jpg")
                   },
                   {
                       image: require("../assets/Pencil.png")
@@ -125,7 +125,7 @@ export default {
     .stage {
         padding-top: 5vw;
         width: 100vw;
-        margin-bottom: -60vw;
+        margin-bottom: -62vw;
     }
     .position-relative{
         position: relative;
@@ -149,31 +149,7 @@ export default {
         flex-wrap:wrap;
         transform-style: preserve-3d;
     }
-    .full-screen-view.active{
-        z-index: 999;
-        background-color: rgba(255,255,255,0.5);
-    }
-    .full-screen-view {
-        position: fixed;
-        z-index: -1;
-        height:100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 500ms;
-    }
-    .full-screen-view img{
-        height: 0;
-        opacity: 0;
-        transition: all 200ms;
-    }
-    .full-screen-view.active img{
-        height:60%;
-        max-height: 60%;
-        opacity: 1;
-        box-shadow: 10px 10px 50px 20px rgba(0,0,0,0.2);
-    }
+
     .ItemCard{
         margin: 3vw;
         position: relative;

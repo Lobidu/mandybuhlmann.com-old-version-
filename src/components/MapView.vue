@@ -3,7 +3,10 @@
         <div class="constraint" :class="{'fullview':fullView}"  @click="fullView = !fullView">
             <div>
                 <div class="tilt-nomove">
-                    <div class="paper paper-left"></div>
+                    <!--<div class="logo">-->
+                        <!--<img src="../assets/favicon_grau.png">-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--<div class="paper paper-left"></div>-->
                     <div class="paper paper-right message">
                     </div>
                     <div class="paper paper-right-top">
@@ -11,6 +14,9 @@
                 </div>
             </div>
         </div>
+        <img height="0" width="0" src="../assets/map_960.png"/>
+        <img height="0" width="0" src="../assets/map_500.png"/>
+        <img height="0" width="0" src="../assets/map2.png"/>
         <div class="map-container" :class="{'fullview':fullView}" @click="fullView = !fullView">
             <div class="actionable map-shadow">
                 <div class="map position">
@@ -22,6 +28,7 @@
                             <div class="in-between-layer"></div>
                         </div>
                         <div class="map-layer upper-layer"></div>
+                        <div class="fullview-map"></div>
                     </div>
                 </div>
             </div>
@@ -51,7 +58,7 @@
          width:100%;
      }
      .position {
-         margin-left: 50vw;
+         margin-left: 43vw;
          position: absolute;
          overflow: visible;
          z-index: 9;
@@ -88,6 +95,9 @@
     }
     @media screen and (min-width: 960px) {
         .map .map-layer {
+            background-image: url("../assets/map_960.png");
+        }
+        .fullview .map .map-layer {
             background-image: url("../assets/map2.png");
         }
     }
@@ -95,10 +105,17 @@
         .map .map-layer {
             background-image: url("../assets/map_960.png");
         }
+        .fullview .map .map-layer{
+            background-image: url("../assets/map_960.png");
+        }
+
     }
     @media screen and (max-width: 500px) {
         .map .map-layer {
             background-image: url("../assets/map_500.png");
+        }
+        .fullview .map .map-layer{
+            background-image: url("../assets/map_960.png");
         }
     }
     .lower-layer {
@@ -130,7 +147,7 @@
         box-shadow: 1vw 2.3vw 3vw rgba(0,0,0,0.2);
     }
     .position, .tilt, .map-layer, .in-between-layer{
-        transition: box-shadow 200ms ease-in-out, all 1s ease-in-out;
+        transition: box-shadow 200ms ease-in-out, all 700ms ease-in-out;
     }
     .fullview .actionable {
         transform: none;
@@ -150,7 +167,9 @@
         margin: 0;
         width: 30vw;
         display: inline-flex;
-        box-shadow: none;
+    }
+    .fullview .map-layer.lower-layer, .fullview .map-layer.middle-layer, .fullview .map-layer.upper-layer {
+        box-shadow: 1vw 2.3vw 1vw rgba(0,0,0,0.2);
     }
     .fullview .map-layer.middle-layer {
         margin-left: 30vw;
@@ -181,13 +200,13 @@
     }
     .paper-right {
         left: 105vw;
-        top: -2vw;
+        top: 1vw;
         transform: rotate(10deg);
     }
     .paper-right-top {
         background: #ffffff;
         left: 105vw;
-        top: -11vw;
+        top: -7vw;
         transform: rotate(-5deg);
     }
     .paper-left {

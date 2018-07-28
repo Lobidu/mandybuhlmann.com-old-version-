@@ -1,13 +1,20 @@
 <template>
-    <main :class="scrollClass">
-        <div class="background-green push-down">
-            <tile-view @toggleScrolling="toggleScrolling"/>
-            <map-view/>
-            <swipe-view/>
-        </div>
-            <grid-view/>
-            <portfolio-view/>
-    </main>
+    <div class="no-overflow">
+        <main :class="scrollClass">
+            <div class="background-green push-down">
+                <tile-view @toggleScrolling="toggleScrolling"/>
+                <map-view/>
+                <swipe-view/>
+                <logo-view/>
+            </div>
+            <div class="background-green">
+
+                <grid-view/>
+                <portfolio-view/>
+            </div>
+        </main>
+    </div>
+
 </template>
 
 <script>
@@ -17,10 +24,12 @@
     import MaskView from "./components/MaskView";
     import PortfolioView from "./components/PortfolioView";
     import MapView from "./components/MapView";
+    import LogoView from "./components/LogoView";
 
     export default {
         name: "App",
         components:{
+            LogoView,
             MapView,
             PortfolioView,
             MaskView,
@@ -51,11 +60,13 @@
     html {
         box-sizing: border-box;
     }
+    ::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+    }
     body {
         margin:0;
         background: #dddddd;
-        width:100vw;
-        overflow-x: hidden;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -65,12 +76,9 @@
         font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: #444444;
-        overflow: hidden;
-    }
-    main.no-scroll {
-        height: 100vh;
-        overflow: hidden;
-        position: fixed;
+        width:100vw;
+        overflow-x: hidden;
+        position: relative;
     }
     h1, h2, h3, h4, h5, h6 {
         font-weight: normal;
@@ -110,12 +118,11 @@
             font-size: 4vw;
         }
         p, .title p{
-            font-size: 1.5vw;
             max-width: 40vw;
         }
     }
     .push-down {
-        padding-bottom: 20vw;
+        padding-bottom: 40vw;
     }
     .background-green {
         background-color: #00807f;
@@ -128,19 +135,17 @@
     }
     .swipe-view .swipecontainer {
         display: flex;
-        padding: 30px;
+        padding: 0 5vw;
         width: 100vw;
         overflow-y: scroll;
         margin-bottom: 15vw;
     }
     .swipe-view .swipecontainer>* {
-        margin-right: 30px;
+        margin-right: 5vw;
     }
     .swipe-view .swipecontainer img{
         display: inline-block;
-        height: 60vw;
-        max-height: 50vh;
-        box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 1vw 2vw rgba(0,0,0,0.2);
     }
     .swipe-view .swipecontainer>*:last-of-type{
         margin-right: 0px;

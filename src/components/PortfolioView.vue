@@ -3,7 +3,9 @@
         <div class="content">
             <div class="title">
                 <h2>Fine Arts</h2>
-                <p>The quick brown fox jumps over the lazy dog. The very quick brown fox jumps over the very lazy dog.</p>
+                <p>Besides being digitally creative, I have continously been pursuing Fine Arts.
+                This selection showcases a variety of techinques and materials used over the past couple of years.
+                </p>
             </div>
             <div class="swipe-view">
                 <div class="swipecontainer">
@@ -30,7 +32,7 @@
                         description: "Paper and Pencil"
                     },
                     {
-                        image: require("../assets/IMG_20170115_115308.jpg"),
+                        image: require("../assets/Maus.jpg"),
                         title: "Mouse",
                         date: "2017",
                         description: "Polymer Clay, Acrylic Paint"
@@ -48,7 +50,7 @@
                         description: "Mixed Material on Cardboard"
                     },
                     {
-                        image: require("../assets/Portrait.png"),
+                        image: require("../assets/Portrait.jpg"),
                         title: "Tube People",
                         date: "2014",
                         description: "Digital Drawing"
@@ -87,10 +89,8 @@
      #portfolio {
          position: relative;
          width:100vw;
-         padding: 1px; /*Avoid collapsing margins*/
      }
     .tilt {
-        background: #dddddd;
         height: 130vh;
         width: 200vw;
         transform: rotateX(60deg) rotateY(0deg) rotateZ(35deg) translateX(-60vw) translateY(-33vw);
@@ -102,7 +102,6 @@
     .content {
         padding: 1px; /*Avoid collapsing margins*/
         /*margin-top: 15vw;*/
-        background: #dddddd;
         z-index: 2;
         position: relative;
     }
@@ -112,7 +111,7 @@
      .title{
          padding: 1px; /*Avoid collapsing margins*/
          color: #cccccc;
-         padding: 5vw 30px;
+         padding: 5vw 5vw;
      }
      .title h1, .title p {
          margin: 0
@@ -120,7 +119,12 @@
      .container {
          overflow: hidden;
      }
+     .swipe-view .swipecontainer img{
+         height: 60vw;
+         max-height: 50vh;
+     }
     .art-display .art-description{
+        color: #cccccc;
         opacity: 0;
         transition: opacity 1s ease-in-out;
     }

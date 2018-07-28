@@ -1,6 +1,6 @@
 <template>
     <div class="image" :class="{'thickness':shadow,'hover': hover}">
-        <img v-if="image" :src="image" />
+        <img v-if="image" :src="image"/>
         <div v-else class="fill" :style="'background-color:' + color +';'"></div>
     </div>
 </template>
@@ -25,11 +25,6 @@
                 default: true
             }
         },
-        data(){
-            return {
-                fullView: false
-            }
-        }
     }
 </script>
 

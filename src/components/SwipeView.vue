@@ -3,8 +3,10 @@
         <div class="element">
             <div class="content">
                 <div class="title">
-                    <h2>Logo Design</h2>
-                    <p>The quick brown fox jumps over the lazy dog. The very quick brown fox jumps over the very lazy dog.</p>
+                    <h2>Posters</h2>
+                    <p>
+                        Under the motto "See it all" I created several landscape-themed posters.
+                       This selection displays four of the most promising ones.</p>
                 </div>
                 <div class="swipe-view">
                     <div class="swipecontainer">
@@ -25,12 +27,10 @@
         data(){
             return {
                 images:[
-                    require("../assets/Comet-01_1.png"),
-                    require("../assets/Comet-01_2.png"),
-                    require("../assets/Comet-02_1.png"),
-                    require("../assets/Comet-02_2.png"),
-                    require("../assets/Comet-03_1.png"),
-                    require("../assets/Comet-03_2.png"),
+                    require("../assets/Mountains.png"),
+                    require("../assets/Poles.png"),
+                    require("../assets/Desert.png"),
+                    require("../assets/Oceans.png"),
                 ]
             }
         }
@@ -40,12 +40,17 @@
 <style scoped>
     .title{
         color: #cccccc;
-        padding: 5vw 30px;
+        padding: 5vw;
     }
     .title h1, .title p {
         margin: 0
     }
     .container {
+        margin-top: 3vw;
         overflow: hidden;
+    }
+    .swipe-view .swipecontainer img{
+        height: 60vw;
+        max-height: 80vh;
     }
 </style>
