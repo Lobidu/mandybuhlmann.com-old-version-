@@ -86,14 +86,13 @@ export default {
               ],
               [
                   {
-                      color: '#ff8ded',
                       image: require("../assets/Triangles.png")
                   },
                   {
-                      image: require("../assets/Peel.png")
+                      image: require("../assets/Supermandy (2).png")
                   },
                   {
-                      color: '#ff9463'
+                    image: require("../assets/cup_coffee.png")
                   },
               ]
           ]
@@ -125,14 +124,14 @@ export default {
     .stage {
         padding-top: 5vw;
         width: 100vw;
-        margin-bottom: -62vw;
+        margin-bottom: -65vw;
     }
     .position-relative{
         position: relative;
     }
     .background {
         width: 288vw;
-        height: 238vw;
+        height: 235vw;
         position: absolute;
         background: #dddddd;
         top: -25vw;

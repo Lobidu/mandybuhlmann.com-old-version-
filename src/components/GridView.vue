@@ -81,7 +81,7 @@
         /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
     }
     .grid-title h2{
-        color: #ffffff;
+        color: #444444;
         margin: 0;
         font-size: 10.5vw;
         text-align: right;
@@ -101,6 +101,7 @@
     .first-row {
         align-items: center;
 
+        margin-left: -20vw;
     }
     .second-row {
         margin-left: 12vw;
@@ -113,6 +114,9 @@
         display: inline-block;
         position: relative;
         margin: 2.5vw;
+    }
+    .grid-item.grid-title {
+        margin-right: 26vw;
     }
     .first-row .second.grid-item img, .first-row .second.grid-item{
         height: 35vw;

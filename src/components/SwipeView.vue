@@ -3,10 +3,9 @@
         <div class="element">
             <div class="content">
                 <div class="title">
-                    <h2>Posters</h2>
+                    <h2>See it all</h2>
                     <p>
-                        Under the motto "See it all" I created several landscape-themed posters.
-                       This selection displays four of the most promising ones.</p>
+                        Under the motto "See It All" these posters are part of a larger travel-themed series.</p>
                 </div>
                 <div class="swipe-view">
                     <div class="swipecontainer">
@@ -48,6 +47,10 @@
     .container {
         margin-top: 3vw;
         overflow: hidden;
+    }
+    .swipe-view .swipecontainer {
+        height: 70vw;
+        max-height: 90vh;
     }
     .swipe-view .swipecontainer img{
         height: 60vw;

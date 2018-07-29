@@ -62,23 +62,16 @@
                         description: "Paper, Acrylic Glass, Plastic, Metal"
                     },
                     {
-                        image: require("../assets/2a761d_6f503058b74e4b6fba9f353656437816.jpg"),
-                        title: "Self Portrait",
-                        date: "2009",
-                        description: "Oil on Canvas"
-                    },
-                    {
                         image: require("../assets/2a761d_62e0f0dbd5be4b4abe81007d6105b57c.jpg"),
                         title: "Untitled",
                         date: "2015",
                         description: "Analog Photography"
-                    },
-                    {
-                        image: require("../assets/Candle_drips.png"),
-                        title: "Untitled",
-                        date: "2018",
-                        description: "Vector Mesh"
-                    }
+                    },{
+                    image: require("../assets/2a761d_6f503058b74e4b6fba9f353656437816.jpg"),
+                    title: "Self Portrait",
+                    date: "2009",
+                    description: "Oil on Canvas"
+                  },
                 ]
             }
         }
@@ -122,6 +115,12 @@
      .swipe-view .swipecontainer img{
          height: 60vw;
          max-height: 50vh;
+     }
+     .art-display {
+
+         overflow: visible;
+         height: 70vw;
+         max-height: 60vh;
      }
     .art-display .art-description{
         color: #cccccc;

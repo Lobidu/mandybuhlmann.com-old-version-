@@ -137,7 +137,8 @@
         display: flex;
         padding: 0 5vw;
         width: 100vw;
-        overflow-y: scroll;
+        overflow-x: scroll;
+        overflow-y: visible;
         margin-bottom: 15vw;
     }
     .swipe-view .swipecontainer>* {

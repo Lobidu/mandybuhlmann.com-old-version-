@@ -93,20 +93,12 @@
         width:20vw;
         background-size: cover;
     }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 500px) {
         .map .map-layer {
             background-image: url("../assets/map_960.png");
         }
-        .fullview .map .map-layer {
+        .fullview .map .map-layer, .fullview-map{
             background-image: url("../assets/map2.png");
-        }
-    }
-    @media screen and (max-width: 960px) {
-        .map .map-layer {
-            background-image: url("../assets/map_960.png");
-        }
-        .fullview .map .map-layer{
-            background-image: url("../assets/map_960.png");
         }
 
     }
@@ -114,7 +106,7 @@
         .map .map-layer {
             background-image: url("../assets/map_500.png");
         }
-        .fullview .map .map-layer{
+        .fullview .map .map-layer, .fullview-map{
             background-image: url("../assets/map_960.png");
         }
     }
@@ -176,6 +168,22 @@
     }
     .fullview .map-layer.upper-layer {
         margin-left: 60vw;
+    }
+    .fullview-map {
+        width: 90vw;
+        height: 56.25vw;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background-size: cover;
+        transition-delay: 0ms;
+        transition: 0ms;
+    }
+    .fullview .fullview-map {
+        opacity: 1;
+        transition-delay: 700ms;
     }
     .constraint{
         width: 100vw;
