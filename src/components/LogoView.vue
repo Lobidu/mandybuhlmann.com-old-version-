@@ -2,10 +2,10 @@
     <div id="LogoView">
         <div class="title">
             <div>
-                <h2>Logo Design</h2>
+                <h2>Brand Design</h2>
                 <p>
-                    Campcrater is an ongoing private project aiming at providing a Pay-as-you-go solution for Campsites.
-                    This set of logos was made to explore the company's branding.
+                    Campcrater is an ongoing private project providing a Pay-As-You-Go solution for Campsites.
+                    This set of designs was made to explore the company's branding.
                 </p>
             </div>
         </div>

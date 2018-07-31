@@ -6,6 +6,7 @@
                 <map-view/>
                 <swipe-view/>
                 <logo-view/>
+                <website-swipe-view/>
             </div>
             <div class="background-green">
 
@@ -20,6 +21,7 @@
 <script>
     import TileView from './components/TileView.vue'
     import SwipeView from './components/SwipeView.vue'
+    import WebsiteSwipeView from './components/WebsitesSwipeView.vue'
     import GridView from './components/GridView.vue'
     import MaskView from "./components/MaskView";
     import PortfolioView from "./components/PortfolioView";
@@ -35,6 +37,7 @@
             MaskView,
             TileView,
             SwipeView,
+            WebsiteSwipeView,
             GridView
         },
         data(){
@@ -122,7 +125,7 @@
         }
     }
     .push-down {
-        padding-bottom: 40vw;
+        padding-bottom: 25vw;
     }
     .background-green {
         background-color: #00807f;
