@@ -9,9 +9,9 @@
                 <website-swipe-view/>
             </div>
             <div class="background-green">
-
                 <grid-view/>
                 <portfolio-view/>
+                <contact-view/>
             </div>
         </main>
     </div>
@@ -27,10 +27,12 @@
     import PortfolioView from "./components/PortfolioView";
     import MapView from "./components/MapView";
     import LogoView from "./components/LogoView";
+    import ContactView from "./components/ContactView";
 
     export default {
         name: "App",
         components:{
+          ContactView,
             LogoView,
             MapView,
             PortfolioView,
@@ -96,6 +98,16 @@
         color: #ffffff;
         font-size: 4vw;
         max-width: 60vw;
+    }
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: normal;
+    }
+    a:hover {
+        color: #eeeeee;
+        text-decoration: none;
+        font-weight: bold;
     }
     .title p {
         font-size: 5vw;

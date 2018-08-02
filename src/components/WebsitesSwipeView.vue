@@ -40,7 +40,7 @@
         margin: 0
     }
     .container {
-        margin-top: 10vw;
+        margin-top: 12vw;
         overflow: hidden;
     }
     .swipe-view .swipecontainer {
