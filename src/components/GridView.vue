@@ -5,7 +5,10 @@
         <div class="grid">
             <div class="first-row">
                 <div class="grid-item first grid-title title">
-                    <h2>Interface<br/> Design</h2>
+                    <h2>Interface<br/>Design</h2>
+                </div>
+                <div class="grid-item  grid-text first title">
+                    <p>User Experience<br/>Interface Design<br/>Web Interfaces</p>
                 </div>
                 <div class="grid-item second" @click="fullScreenView=true; fullScreenImage=images[0]">
                     <image-component
@@ -86,6 +89,13 @@
         font-size: 10.5vw;
         text-align: right;
     }
+    .grid-text p {
+        color: #444444;
+        margin: 0;
+        font-size: 4vw !important;
+        line-height: 1.5em;
+        text-align: left;
+    }
     .grid-title.grid-item {
         width: 35vw;
     }
@@ -116,7 +126,7 @@
         margin: 2.5vw;
     }
     .grid-item.grid-title {
-        margin-right: 26vw;
+        margin-right: 12vw;
     }
     .first-row .second.grid-item img, .first-row .second.grid-item{
         height: 35vw;

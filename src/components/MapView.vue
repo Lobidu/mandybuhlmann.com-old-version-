@@ -6,7 +6,7 @@
                     <!--<div class="logo">-->
                         <!--<img src="../assets/favicon_grau.png">-->
                     <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--<div class="paper paper-left"></div>-->
+                    <div class="text"><p>Hi there, I'm Mandy.<br/>Artist. Designer. Strategist.<br/>This is my work.</p></div>
                     <div class="paper paper-right message">
                     </div>
                     <div class="paper paper-right-top">
@@ -207,17 +207,26 @@
         font-size: 7vw;
     }
     .paper-right {
-        left: 105vw;
-        top: 1vw;
-        transform: rotate(10deg);
+        left: 101.5vw;
+        top:1vw;
     }
     .paper-right-top {
         background: #ffffff;
         left: 105vw;
-        top: -7vw;
-        transform: rotate(-5deg);
+        top: -4.5vw;
     }
     .paper-left {
         left: 44vw;
+    }
+    .text {
+        margin-left: 10vw;
+        width: 35vw;
+    }
+    .text p{
+        font-size: 4vw;
+        color: #555555;
+        text-align: right;
+        line-height: 1.5em;
+        margin-top:0;
     }
 </style>

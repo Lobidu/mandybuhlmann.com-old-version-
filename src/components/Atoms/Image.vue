@@ -51,13 +51,11 @@
     }
     .image img{
         transition: all 200ms ease-in-out;
+        box-shadow: 0.5vw 0.5vw 1.5vw rgba(0,0,0,0.2);
     }
     .image.hover:hover img{
         transform: translateY(-1vw) translateX(-1vw);
         box-shadow: 1.5vw 1.5vw 2vw -0.2vw rgba(0,0,0,0.2);
-    }
-    .image img {
-        box-shadow: 0.5vw 0.5vw 1.5vw rgba(0,0,0,0.2);
     }
     .fill {
         width: 34vw;
