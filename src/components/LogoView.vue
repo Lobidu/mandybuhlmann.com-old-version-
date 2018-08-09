@@ -25,12 +25,12 @@
         data(){
             return {
                 images:[
-                    require("../assets/Comet-01_1_square.png"),
-                    require("../assets/Comet-04_sq.png"),
-                    require("../assets/Comet-03_2_square.png"),
-                    require("../assets/Comet-03_1_square.png"),
+                  require("../assets/Comet-02_2_square.png"),
+                  require("../assets/Comet_C2.png"),
+                    require("../assets/dunkel.png"),
+                    require("../assets/Comet-01_2_v2.png"),
                     require("../assets/Comet-02_1_square.png"),
-                    require("../assets/Comet-02_2_square.png"),
+                  require("../assets/Comet-04_sq.png"),
 
                 ]
             }

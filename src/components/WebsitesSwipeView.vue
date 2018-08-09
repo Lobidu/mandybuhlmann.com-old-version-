@@ -21,10 +21,13 @@
         data(){
             return {
                 images:[
-                    require("../assets/Mockup1.jpg"),
-                    require("../assets/Mockup2.jpg"),
-                    require("../assets/Mockup5.jpg"),
-                    require("../assets/Mockup4.jpg"),
+                  require("../assets/cc4.png"),
+                  require("../assets/cc3.png"),
+                  require("../assets/cc5.png"),
+                  require("../assets/cc1.png"),
+                  //require("../assets/cc6.jpg"),
+                 // require("../assets/cc2.jpg"),
+                    require("../assets/cc7.png"),
                 ]
             }
         }
