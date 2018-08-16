@@ -21,13 +21,10 @@
         data(){
             return {
                 images:[
-                  require("../assets/cc4.png"),
-                  require("../assets/cc3.png"),
-                  require("../assets/cc5.png"),
-                  require("../assets/cc1.png"),
-                  //require("../assets/cc6.jpg"),
-                 // require("../assets/cc2.jpg"),
-                    require("../assets/cc7.png"),
+                  require("../assets/Campcrater_Home-01.png"),
+                  require("../assets/Campcrater_Home-02.png"),
+                  require("../assets/Campcrater_Home-03.png"),
+                  require("../assets/Campcrater_Home-04.png"),
                 ]
             }
         }
