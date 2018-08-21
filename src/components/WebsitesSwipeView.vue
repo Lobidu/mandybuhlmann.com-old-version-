@@ -23,10 +23,10 @@
                 images:[
                   require("../assets/Campcrater_Home2-01.png"),
                   require("../assets/Campcrater_Home-04.png"),
+                  require("../assets/Campcrater_Home_purple.png"),
                   require("../assets/Campcrater_Home-02.png"),
                   require("../assets/Campcrater_Home-05.png"),
-                  require("../assets/Campcrater_Home-03.png"),
-                ]
+                ],
             }
         }
     }
